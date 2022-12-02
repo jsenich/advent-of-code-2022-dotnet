@@ -1,0 +1,34 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Day 01",
+            "type": "coreclr",
+            "request": "launch",
+            "preLaunchTask": "build1",
+            "program": "${workspaceFolder}/Day01/bin/Debug/net7.0/Day01.dll",
+            "args": [],
+            "cwd": "${workspaceFolder}/Day01",
+            "console": "internalConsole",
+            "stopAtEntry": false,
+            "logging": {"programOutput": true, "moduleLoad": false, "processExit": false}
+        },
+        {
+            "name": "Day 02",
+            "type": "coreclr",
+            "request": "launch",
+            "preLaunchTask": "build2",
+            "program": "${workspaceFolder}/Day02/bin/Debug/net7.0/Day02.dll",
+            "args": [],
+            "cwd": "${workspaceFolder}/Day02",
+            "console": "internalConsole",
+            "stopAtEntry": false,
+            "logging": {"programOutput": true, "moduleLoad": false, "processExit": false}
+        },
+        {
+            "name": ".NET Core Attach",
+            "type": "coreclr",
+            "request": "attach"
+        }
+    ]
+}
