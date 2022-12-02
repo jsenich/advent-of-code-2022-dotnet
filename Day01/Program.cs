@@ -1,7 +1,4 @@
-﻿using System.IO;
-using System.Linq;
-
-namespace Day01;
+﻿namespace Day01;
 class Program
 {
     static int PartOne(string[] puzzleInput)
@@ -44,6 +41,6 @@ class Program
         var input = File.ReadAllLines("input.txt");
 
         Console.WriteLine($"PartOne: {PartOne(input)}");  // 74394
-        Console.WriteLine($"PartOne: {PartTwo(input)}"); // 212836
+        Console.WriteLine($"PartTwo: {PartTwo(input)}"); // 212836
     }
 }
