@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace Day03;
+﻿namespace Day03;
 class Program
 {
     static int PartOne(IEnumerable<string> puzzleInput)
@@ -54,7 +52,6 @@ class Program
     static void Main(string[] args)
     {
         var input = File.ReadLines("input.txt");
-
 
         Console.WriteLine($"PartOne: {PartOne(input)}"); // 8085
         Console.WriteLine($"PartTwo: {PartTwo(input)}"); // 2515
