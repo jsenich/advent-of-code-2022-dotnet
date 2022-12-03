@@ -26,6 +26,18 @@
             "logging": {"programOutput": true, "moduleLoad": false, "processExit": false}
         },
         {
+            "name": "Day 03",
+            "type": "coreclr",
+            "request": "launch",
+            "preLaunchTask": "build3",
+            "program": "${workspaceFolder}/Day03/bin/Debug/net7.0/Day03.dll",
+            "args": [],
+            "cwd": "${workspaceFolder}/Day03",
+            "console": "internalConsole",
+            "stopAtEntry": false,
+            "logging": {"programOutput": true, "moduleLoad": false, "processExit": false}
+        },
+        {
             "name": ".NET Core Attach",
             "type": "coreclr",
             "request": "attach"
