@@ -11,7 +11,11 @@
             "cwd": "${workspaceFolder}/Day01",
             "console": "internalConsole",
             "stopAtEntry": false,
-            "logging": {"programOutput": true, "moduleLoad": false, "processExit": false}
+            "logging": {
+                "programOutput": true,
+                "moduleLoad": false,
+                "processExit": false
+            }
         },
         {
             "name": "Day 02",
@@ -23,7 +27,11 @@
             "cwd": "${workspaceFolder}/Day02",
             "console": "internalConsole",
             "stopAtEntry": false,
-            "logging": {"programOutput": true, "moduleLoad": false, "processExit": false}
+            "logging": {
+                "programOutput": true,
+                "moduleLoad": false,
+                "processExit": false
+            }
         },
         {
             "name": "Day 03",
@@ -35,7 +43,27 @@
             "cwd": "${workspaceFolder}/Day03",
             "console": "internalConsole",
             "stopAtEntry": false,
-            "logging": {"programOutput": true, "moduleLoad": false, "processExit": false}
+            "logging": {
+                "programOutput": true,
+                "moduleLoad": false,
+                "processExit": false
+            }
+        },
+        {
+            "name": "Day 04",
+            "type": "coreclr",
+            "request": "launch",
+            "preLaunchTask": "build4",
+            "program": "${workspaceFolder}/Day04/bin/Debug/net7.0/Day04.dll",
+            "args": [],
+            "cwd": "${workspaceFolder}/Day04",
+            "console": "internalConsole",
+            "stopAtEntry": false,
+            "logging": {
+                "programOutput": true,
+                "moduleLoad": false,
+                "processExit": false
+            }
         },
         {
             "name": ".NET Core Attach",
