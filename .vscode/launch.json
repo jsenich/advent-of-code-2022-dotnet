@@ -66,6 +66,22 @@
             }
         },
         {
+            "name": "Day 05",
+            "type": "coreclr",
+            "request": "launch",
+            "preLaunchTask": "build5",
+            "program": "${workspaceFolder}/Day05/bin/Debug/net7.0/Day05.dll",
+            "args": [],
+            "cwd": "${workspaceFolder}/Day05",
+            "console": "internalConsole",
+            "stopAtEntry": false,
+            "logging": {
+                "programOutput": true,
+                "moduleLoad": false,
+                "processExit": false
+            }
+        },
+        {
             "name": ".NET Core Attach",
             "type": "coreclr",
             "request": "attach"
