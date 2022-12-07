@@ -1,45 +1,31 @@
 ﻿namespace Day06;
 class Program
 {
-    static void Main(string[] args)
+    static int GetStartPosition(char[] stream, int markerLength)
     {
-        var input = File.ReadAllText("input.txt").TrimEnd().ToArray();
-
         int start = 0;
 
         while (true)
         {
-            var window = Enumerable.Range(start, 4).Select(i => input[i]).ToArray();
+            var window = Enumerable.Range(start, markerLength).Select(i => stream[i]).ToArray();
             HashSet<char> uniqueChars = new HashSet<char>(window);
 
-            if (uniqueChars.Count == 4)
+            if (uniqueChars.Count == markerLength)
             {
                 break;
             }
-            else
-            {
-                start++;
-            }
+
+            start++;
         }
 
-        int start2 = 1909;
+        return start + markerLength;
+    }
 
-        while (true)
-        {
-            var window = Enumerable.Range(start2, 14).Select(i => input[i]).ToArray();
-            HashSet<char> uniqueChars = new HashSet<char>(window);
+    static void Main(string[] args)
+    {
+        var puzzleInput = File.ReadAllText("input.txt").TrimEnd().ToArray();
 
-            if (uniqueChars.Count == 14)
-            {
-                break;
-            }
-            else
-            {
-                start2++;
-            }
-        }
-
-        Console.WriteLine($"PartOne: {start + 4}"); // 1909
-        Console.WriteLine($"PartTwo: {start2 + 14}"); // 3380
+        Console.WriteLine($"PartOne: {GetStartPosition(puzzleInput, 4)}"); // 1909
+        Console.WriteLine($"PartTwo: {GetStartPosition(puzzleInput, 14)}"); // 3380
     }
 }
