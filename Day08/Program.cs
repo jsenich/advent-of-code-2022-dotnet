@@ -39,7 +39,7 @@ class Program
                 {
                     seenTrees.Add(String.Join('-', i.ToString(), j.ToString()));
                     lastTree = treeGrid[i, j];
-                    // visibleTrees++;
+
                     if (treeGrid[i, j] == largest)
                     {
                         break;
@@ -54,7 +54,7 @@ class Program
                 {
                     seenTrees.Add(String.Join('-', i.ToString(), j.ToString()));
                     lastTree = treeGrid[i, j];
-                    // visibleTrees++;
+
                     if (treeGrid[i, j] == largest)
                     {
                         break;
@@ -75,7 +75,7 @@ class Program
                 {
                     seenTrees.Add(String.Join('-', j.ToString(), i.ToString()));
                     lastTree = treeGrid[j, i];
-                    // visibleTrees++;
+
                     if (treeGrid[j, i] == largest)
                     {
                         break;
@@ -90,7 +90,7 @@ class Program
                 {
                     seenTrees.Add(String.Join('-', j.ToString(), i.ToString()));
                     lastTree = treeGrid[j, i];
-                    // visibleTrees++;
+
                     if (treeGrid[j, i] == largest)
                     {
                         break;
@@ -105,7 +105,77 @@ class Program
 
         HashSet<int> scenicScores = new HashSet<int>();
 
+        for (int i = 1; i <= rows - 1; i++)
+        {
+            for (int j = 1; j <= cols - 1; j++)
+            {
+                var rscore = 0;
+                var lscore = 0;
+                var uscore = 0;
+                var dscore = 0;
 
-        Console.WriteLine($"PartTwo: {scenicScores.Max()}");
+                for (int right = j + 1; right < cols; right++)
+                {
+                    rscore++;
+                    if (treeGrid[i, right] <= treeGrid[i, j])
+                    {
+                        if (treeGrid[i, right] == treeGrid[i, j])
+                        {
+                            break;
+                        }
+                    }
+                    else
+                    {
+                        break;
+                    }
+                }
+
+                for (int left = j - 1; left >= 0; left--)
+                {
+                    lscore++;
+                    if (treeGrid[i, left] <= treeGrid[i, j])
+                    {
+                        if (treeGrid[i, left] == treeGrid[i, j]) { break; }
+                    }
+                    else
+                    {
+                        break;
+                    }
+                }
+
+                for (int down = i + 1; down < rows; down++)
+                {
+                    dscore++;
+                    if (treeGrid[down, j] <= treeGrid[i, j])
+                    {
+                        if (treeGrid[down, j] == treeGrid[i, j]) { break; }
+                    }
+                    else
+                    {
+                        break;
+                    }
+                }
+
+                for (int up = i - 1; up >= 0; up--)
+                {
+                    uscore++;
+                    if (treeGrid[up, j] < treeGrid[i, j])
+                    {
+                        if (treeGrid[up, j] == treeGrid[i, j]) { break; }
+                    }
+                    else
+                    {
+                        break;
+                    }
+                }
+
+                scenicScores.Add(rscore * lscore * uscore * dscore);
+            }
+
+
+        }
+
+
+        Console.WriteLine($"PartTwo: {scenicScores.Max()}"); // 288120
     }
 }
