@@ -146,6 +146,22 @@
             }
         },
         {
+            "name": "Day 10",
+            "type": "coreclr",
+            "request": "launch",
+            "preLaunchTask": "build10",
+            "program": "${workspaceFolder}/Day10/bin/Debug/net7.0/Day10.dll",
+            "args": [],
+            "cwd": "${workspaceFolder}/Day10",
+            "console": "internalConsole",
+            "stopAtEntry": false,
+            "logging": {
+                "programOutput": true,
+                "moduleLoad": false,
+                "processExit": false
+            }
+        },
+        {
             "name": ".NET Core Attach",
             "type": "coreclr",
             "request": "attach"
