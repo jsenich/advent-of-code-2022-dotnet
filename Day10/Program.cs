@@ -1,4 +1,6 @@
-﻿namespace Day10;
+﻿using System.Text;
+
+namespace Day10;
 class Program
 {
     static int PartOne(string[] puzzleInput)
@@ -41,165 +43,95 @@ class Program
         return signalStrengths.Sum();
     }
 
+    static int[] GetSpriteWindow(int startPos)
+    {
+        return Enumerable.Range(startPos - 1, 3).ToArray();
+    }
+
+    static string RenderGrid(string[,] grid)
+    {
+        var sb = new StringBuilder(string.Empty);
+        for (var row = 0; row < grid.GetLength(0); row++)
+        {
+            for (var col = 0; col < grid.GetLength(1); col++)
+            {
+                sb.Append(grid[row, col]);
+            }
+            sb.Append("\n");
+        }
+
+        return sb.ToString();
+    }
+
+    static string PartTwo(string[] puzzleInput)
+    {
+        var crt = new string[6, 40];
+        int x = 1;
+        int cycle = 0;
+
+        Dictionary<int, int> adds = new Dictionary<int, int>();
+        Dictionary<int, int> cycleLookup = new Dictionary<int, int>() { { 0, x } };
+
+        foreach (var line in puzzleInput)
+        {
+            var args = line.Split(" ");
+            if (args[0] == "noop")
+            {
+                cycleLookup[++cycle] = x;
+            }
+            else
+            {
+                cycleLookup[++cycle] = x;
+                x += int.Parse(args[1]);
+                cycleLookup[++cycle] = x;
+            }
+        }
+
+        var column = 0;
+        var row = 0;
+
+        foreach (int key in cycleLookup.Keys.Order())
+        {
+            if (row > 5) break;
+
+            var sprite = GetSpriteWindow(cycleLookup[(key)]);
+            if (sprite.Contains(key % 40))
+            {
+                crt[row, column] = "#";
+            }
+            else
+            {
+                crt[row, column] = ".";
+            }
+
+            if (column == 39)
+            {
+                column = 0;
+                row++;
+
+                continue;
+            }
+            column++;
+        }
+
+        return RenderGrid(crt);
+    }
+
     static void Main()
     {
         var puzzleInput = File.ReadAllLines("input.txt");
-        // var puzzleInput = """
-        // addx 15
-        // addx -11
-        // addx 6
-        // addx -3
-        // addx 5
-        // addx -1
-        // addx -8
-        // addx 13
-        // addx 4
-        // noop
-        // addx -1
-        // addx 5
-        // addx -1
-        // addx 5
-        // addx -1
-        // addx 5
-        // addx -1
-        // addx 5
-        // addx -1
-        // addx -35
-        // addx 1
-        // addx 24
-        // addx -19
-        // addx 1
-        // addx 16
-        // addx -11
-        // noop
-        // noop
-        // addx 21
-        // addx -15
-        // noop
-        // noop
-        // addx -3
-        // addx 9
-        // addx 1
-        // addx -3
-        // addx 8
-        // addx 1
-        // addx 5
-        // noop
-        // noop
-        // noop
-        // noop
-        // noop
-        // addx -36
-        // noop
-        // addx 1
-        // addx 7
-        // noop
-        // noop
-        // noop
-        // addx 2
-        // addx 6
-        // noop
-        // noop
-        // noop
-        // noop
-        // noop
-        // addx 1
-        // noop
-        // noop
-        // addx 7
-        // addx 1
-        // noop
-        // addx -13
-        // addx 13
-        // addx 7
-        // noop
-        // addx 1
-        // addx -33
-        // noop
-        // noop
-        // noop
-        // addx 2
-        // noop
-        // noop
-        // noop
-        // addx 8
-        // noop
-        // addx -1
-        // addx 2
-        // addx 1
-        // noop
-        // addx 17
-        // addx -9
-        // addx 1
-        // addx 1
-        // addx -3
-        // addx 11
-        // noop
-        // noop
-        // addx 1
-        // noop
-        // addx 1
-        // noop
-        // noop
-        // addx -13
-        // addx -19
-        // addx 1
-        // addx 3
-        // addx 26
-        // addx -30
-        // addx 12
-        // addx -1
-        // addx 3
-        // addx 1
-        // noop
-        // noop
-        // noop
-        // addx -9
-        // addx 18
-        // addx 1
-        // addx 2
-        // noop
-        // noop
-        // addx 9
-        // noop
-        // noop
-        // noop
-        // addx -1
-        // addx 2
-        // addx -37
-        // addx 1
-        // addx 3
-        // noop
-        // addx 15
-        // addx -21
-        // addx 22
-        // addx -6
-        // addx 1
-        // noop
-        // addx 2
-        // addx 1
-        // noop
-        // addx -10
-        // noop
-        // noop
-        // addx 20
-        // addx 1
-        // addx 2
-        // addx 2
-        // addx -6
-        // addx -11
-        // noop
-        // noop
-        // noop
-        // """.Split("\n", StringSplitOptions.TrimEntries);
-
-        //         var puzzleInput = """
-        // noop
-        // addx 3
-        // addx -5
-        // """.Split("\n", StringSplitOptions.TrimEntries);
-
 
         Console.WriteLine($"Part One: {PartOne(puzzleInput)}"); // 17940
+        Console.WriteLine($"Part Two: \n\n{PartTwo(puzzleInput)}");
+
+        /*
+        ####..##..###...##....##.####...##.####.
+        ...#.#..#.#..#.#..#....#.#.......#....#.
+        ..#..#....###..#..#....#.###.....#...#..
+        .#...#....#..#.####....#.#.......#..#...
+        #....#..#.#..#.#..#.#..#.#....#..#.#....
+        ####..##..###..#..#..##..#.....##..####.
+        */
+
     }
 }
