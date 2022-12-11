@@ -162,6 +162,22 @@
             }
         },
         {
+            "name": "Day 11",
+            "type": "coreclr",
+            "request": "launch",
+            "preLaunchTask": "build11",
+            "program": "${workspaceFolder}/Day11/bin/Debug/net7.0/Day11.dll",
+            "args": [],
+            "cwd": "${workspaceFolder}/Day11",
+            "console": "internalConsole",
+            "stopAtEntry": false,
+            "logging": {
+                "programOutput": true,
+                "moduleLoad": false,
+                "processExit": false
+            }
+        },
+        {
             "name": ".NET Core Attach",
             "type": "coreclr",
             "request": "attach"
