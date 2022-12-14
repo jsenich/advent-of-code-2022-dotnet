@@ -178,6 +178,22 @@
             }
         },
         {
+            "name": "Day 12",
+            "type": "coreclr",
+            "request": "launch",
+            "preLaunchTask": "build12",
+            "program": "${workspaceFolder}/Day12/bin/Debug/net7.0/Day12.dll",
+            "args": [],
+            "cwd": "${workspaceFolder}/Day12",
+            "console": "internalConsole",
+            "stopAtEntry": false,
+            "logging": {
+                "programOutput": true,
+                "moduleLoad": false,
+                "processExit": false
+            }
+        },
+        {
             "name": ".NET Core Attach",
             "type": "coreclr",
             "request": "attach"
