@@ -1,218 +1,234 @@
 {
-    "version": "0.2.0",
-    "configurations": [
-        {
-            "name": "Day 01",
-            "type": "coreclr",
-            "request": "launch",
-            "preLaunchTask": "build1",
-            "program": "${workspaceFolder}/Day01/bin/Debug/net7.0/Day01.dll",
-            "args": [],
-            "cwd": "${workspaceFolder}/Day01",
-            "console": "internalConsole",
-            "stopAtEntry": false,
-            "logging": {
-                "programOutput": true,
-                "moduleLoad": false,
-                "processExit": false
-            }
-        },
-        {
-            "name": "Day 02",
-            "type": "coreclr",
-            "request": "launch",
-            "preLaunchTask": "build2",
-            "program": "${workspaceFolder}/Day02/bin/Debug/net7.0/Day02.dll",
-            "args": [],
-            "cwd": "${workspaceFolder}/Day02",
-            "console": "internalConsole",
-            "stopAtEntry": false,
-            "logging": {
-                "programOutput": true,
-                "moduleLoad": false,
-                "processExit": false
-            }
-        },
-        {
-            "name": "Day 03",
-            "type": "coreclr",
-            "request": "launch",
-            "preLaunchTask": "build3",
-            "program": "${workspaceFolder}/Day03/bin/Debug/net7.0/Day03.dll",
-            "args": [],
-            "cwd": "${workspaceFolder}/Day03",
-            "console": "internalConsole",
-            "stopAtEntry": false,
-            "logging": {
-                "programOutput": true,
-                "moduleLoad": false,
-                "processExit": false
-            }
-        },
-        {
-            "name": "Day 04",
-            "type": "coreclr",
-            "request": "launch",
-            "preLaunchTask": "build4",
-            "program": "${workspaceFolder}/Day04/bin/Debug/net7.0/Day04.dll",
-            "args": [],
-            "cwd": "${workspaceFolder}/Day04",
-            "console": "internalConsole",
-            "stopAtEntry": false,
-            "logging": {
-                "programOutput": true,
-                "moduleLoad": false,
-                "processExit": false
-            }
-        },
-        {
-            "name": "Day 05",
-            "type": "coreclr",
-            "request": "launch",
-            "preLaunchTask": "build5",
-            "program": "${workspaceFolder}/Day05/bin/Debug/net7.0/Day05.dll",
-            "args": [],
-            "cwd": "${workspaceFolder}/Day05",
-            "console": "internalConsole",
-            "stopAtEntry": false,
-            "logging": {
-                "programOutput": true,
-                "moduleLoad": false,
-                "processExit": false
-            }
-        },
-        {
-            "name": "Day 06",
-            "type": "coreclr",
-            "request": "launch",
-            "preLaunchTask": "build6",
-            "program": "${workspaceFolder}/Day06/bin/Debug/net7.0/Day06.dll",
-            "args": [],
-            "cwd": "${workspaceFolder}/Day06",
-            "console": "internalConsole",
-            "stopAtEntry": false,
-            "logging": {
-                "programOutput": true,
-                "moduleLoad": false,
-                "processExit": false
-            }
-        },
-        {
-            "name": "Day 07",
-            "type": "coreclr",
-            "request": "launch",
-            "preLaunchTask": "build7",
-            "program": "${workspaceFolder}/Day07/bin/Debug/net7.0/Day07.dll",
-            "args": [],
-            "cwd": "${workspaceFolder}/Day07",
-            "console": "internalConsole",
-            "stopAtEntry": false,
-            "logging": {
-                "programOutput": true,
-                "moduleLoad": false,
-                "processExit": false
-            }
-        },
-        {
-            "name": "Day 08",
-            "type": "coreclr",
-            "request": "launch",
-            "preLaunchTask": "build8",
-            "program": "${workspaceFolder}/Day08/bin/Debug/net7.0/Day08.dll",
-            "args": [],
-            "cwd": "${workspaceFolder}/Day08",
-            "console": "internalConsole",
-            "stopAtEntry": false,
-            "logging": {
-                "programOutput": true,
-                "moduleLoad": false,
-                "processExit": false
-            }
-        },
-        {
-            "name": "Day 09",
-            "type": "coreclr",
-            "request": "launch",
-            "preLaunchTask": "build9",
-            "program": "${workspaceFolder}/Day09/bin/Debug/net7.0/Day09.dll",
-            "args": [],
-            "cwd": "${workspaceFolder}/Day09",
-            "console": "internalConsole",
-            "stopAtEntry": false,
-            "logging": {
-                "programOutput": true,
-                "moduleLoad": false,
-                "processExit": false
-            }
-        },
-        {
-            "name": "Day 10",
-            "type": "coreclr",
-            "request": "launch",
-            "preLaunchTask": "build10",
-            "program": "${workspaceFolder}/Day10/bin/Debug/net7.0/Day10.dll",
-            "args": [],
-            "cwd": "${workspaceFolder}/Day10",
-            "console": "internalConsole",
-            "stopAtEntry": false,
-            "logging": {
-                "programOutput": true,
-                "moduleLoad": false,
-                "processExit": false
-            }
-        },
-        {
-            "name": "Day 11",
-            "type": "coreclr",
-            "request": "launch",
-            "preLaunchTask": "build11",
-            "program": "${workspaceFolder}/Day11/bin/Debug/net7.0/Day11.dll",
-            "args": [],
-            "cwd": "${workspaceFolder}/Day11",
-            "console": "internalConsole",
-            "stopAtEntry": false,
-            "logging": {
-                "programOutput": true,
-                "moduleLoad": false,
-                "processExit": false
-            }
-        },
-        {
-            "name": "Day 12",
-            "type": "coreclr",
-            "request": "launch",
-            "preLaunchTask": "build12",
-            "program": "${workspaceFolder}/Day12/bin/Debug/net7.0/Day12.dll",
-            "args": [],
-            "cwd": "${workspaceFolder}/Day12",
-            "console": "internalConsole",
-            "stopAtEntry": false,
-            "logging": {
-                "programOutput": true,
-                "moduleLoad": false,
-                "processExit": false
-            }
-        },
-        {
-            "name": "Day 13",
-            "type": "coreclr",
-            "request": "launch",
-            "preLaunchTask": "build13",
-            "program": "${workspaceFolder}/Day13/bin/Debug/net7.0/Day13.dll",
-            "args": [],
-            "cwd": "${workspaceFolder}/Day13",
-            "console": "internalConsole",
-            "stopAtEntry": false,
-            "logging": {
-                "programOutput": true,
-                "moduleLoad": false,
-                "processExit": false
-            }
-        },
-        {
-            "name": ".NET Core Attach",
-            "type": "coreclr",
-            "request": "attach"
-        }
-    ]
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Day 01",
+      "type": "coreclr",
+      "request": "launch",
+      "preLaunchTask": "build1",
+      "program": "${workspaceFolder}/Day01/bin/Debug/net7.0/Day01.dll",
+      "args": [],
+      "cwd": "${workspaceFolder}/Day01",
+      "console": "internalConsole",
+      "stopAtEntry": false,
+      "logging": {
+        "programOutput": true,
+        "moduleLoad": false,
+        "processExit": false
+      }
+    },
+    {
+      "name": "Day 02",
+      "type": "coreclr",
+      "request": "launch",
+      "preLaunchTask": "build2",
+      "program": "${workspaceFolder}/Day02/bin/Debug/net7.0/Day02.dll",
+      "args": [],
+      "cwd": "${workspaceFolder}/Day02",
+      "console": "internalConsole",
+      "stopAtEntry": false,
+      "logging": {
+        "programOutput": true,
+        "moduleLoad": false,
+        "processExit": false
+      }
+    },
+    {
+      "name": "Day 03",
+      "type": "coreclr",
+      "request": "launch",
+      "preLaunchTask": "build3",
+      "program": "${workspaceFolder}/Day03/bin/Debug/net7.0/Day03.dll",
+      "args": [],
+      "cwd": "${workspaceFolder}/Day03",
+      "console": "internalConsole",
+      "stopAtEntry": false,
+      "logging": {
+        "programOutput": true,
+        "moduleLoad": false,
+        "processExit": false
+      }
+    },
+    {
+      "name": "Day 04",
+      "type": "coreclr",
+      "request": "launch",
+      "preLaunchTask": "build4",
+      "program": "${workspaceFolder}/Day04/bin/Debug/net7.0/Day04.dll",
+      "args": [],
+      "cwd": "${workspaceFolder}/Day04",
+      "console": "internalConsole",
+      "stopAtEntry": false,
+      "logging": {
+        "programOutput": true,
+        "moduleLoad": false,
+        "processExit": false
+      }
+    },
+    {
+      "name": "Day 05",
+      "type": "coreclr",
+      "request": "launch",
+      "preLaunchTask": "build5",
+      "program": "${workspaceFolder}/Day05/bin/Debug/net7.0/Day05.dll",
+      "args": [],
+      "cwd": "${workspaceFolder}/Day05",
+      "console": "internalConsole",
+      "stopAtEntry": false,
+      "logging": {
+        "programOutput": true,
+        "moduleLoad": false,
+        "processExit": false
+      }
+    },
+    {
+      "name": "Day 06",
+      "type": "coreclr",
+      "request": "launch",
+      "preLaunchTask": "build6",
+      "program": "${workspaceFolder}/Day06/bin/Debug/net7.0/Day06.dll",
+      "args": [],
+      "cwd": "${workspaceFolder}/Day06",
+      "console": "internalConsole",
+      "stopAtEntry": false,
+      "logging": {
+        "programOutput": true,
+        "moduleLoad": false,
+        "processExit": false
+      }
+    },
+    {
+      "name": "Day 07",
+      "type": "coreclr",
+      "request": "launch",
+      "preLaunchTask": "build7",
+      "program": "${workspaceFolder}/Day07/bin/Debug/net7.0/Day07.dll",
+      "args": [],
+      "cwd": "${workspaceFolder}/Day07",
+      "console": "internalConsole",
+      "stopAtEntry": false,
+      "logging": {
+        "programOutput": true,
+        "moduleLoad": false,
+        "processExit": false
+      }
+    },
+    {
+      "name": "Day 08",
+      "type": "coreclr",
+      "request": "launch",
+      "preLaunchTask": "build8",
+      "program": "${workspaceFolder}/Day08/bin/Debug/net7.0/Day08.dll",
+      "args": [],
+      "cwd": "${workspaceFolder}/Day08",
+      "console": "internalConsole",
+      "stopAtEntry": false,
+      "logging": {
+        "programOutput": true,
+        "moduleLoad": false,
+        "processExit": false
+      }
+    },
+    {
+      "name": "Day 09",
+      "type": "coreclr",
+      "request": "launch",
+      "preLaunchTask": "build9",
+      "program": "${workspaceFolder}/Day09/bin/Debug/net7.0/Day09.dll",
+      "args": [],
+      "cwd": "${workspaceFolder}/Day09",
+      "console": "internalConsole",
+      "stopAtEntry": false,
+      "logging": {
+        "programOutput": true,
+        "moduleLoad": false,
+        "processExit": false
+      }
+    },
+    {
+      "name": "Day 10",
+      "type": "coreclr",
+      "request": "launch",
+      "preLaunchTask": "build10",
+      "program": "${workspaceFolder}/Day10/bin/Debug/net7.0/Day10.dll",
+      "args": [],
+      "cwd": "${workspaceFolder}/Day10",
+      "console": "internalConsole",
+      "stopAtEntry": false,
+      "logging": {
+        "programOutput": true,
+        "moduleLoad": false,
+        "processExit": false
+      }
+    },
+    {
+      "name": "Day 11",
+      "type": "coreclr",
+      "request": "launch",
+      "preLaunchTask": "build11",
+      "program": "${workspaceFolder}/Day11/bin/Debug/net7.0/Day11.dll",
+      "args": [],
+      "cwd": "${workspaceFolder}/Day11",
+      "console": "internalConsole",
+      "stopAtEntry": false,
+      "logging": {
+        "programOutput": true,
+        "moduleLoad": false,
+        "processExit": false
+      }
+    },
+    {
+      "name": "Day 12",
+      "type": "coreclr",
+      "request": "launch",
+      "preLaunchTask": "build12",
+      "program": "${workspaceFolder}/Day12/bin/Debug/net7.0/Day12.dll",
+      "args": [],
+      "cwd": "${workspaceFolder}/Day12",
+      "console": "internalConsole",
+      "stopAtEntry": false,
+      "logging": {
+        "programOutput": true,
+        "moduleLoad": false,
+        "processExit": false
+      }
+    },
+    {
+      "name": "Day 13",
+      "type": "coreclr",
+      "request": "launch",
+      "preLaunchTask": "build13",
+      "program": "${workspaceFolder}/Day13/bin/Debug/net7.0/Day13.dll",
+      "args": [],
+      "cwd": "${workspaceFolder}/Day13",
+      "console": "internalConsole",
+      "stopAtEntry": false,
+      "logging": {
+        "programOutput": true,
+        "moduleLoad": false,
+        "processExit": false
+      }
+    },
+    {
+      "name": "Day 15",
+      "type": "coreclr",
+      "request": "launch",
+      "preLaunchTask": "build15",
+      "program": "${workspaceFolder}/Day15/bin/Debug/net7.0/Day15.dll",
+      "args": [],
+      "cwd": "${workspaceFolder}/Day15",
+      "console": "internalConsole",
+      "stopAtEntry": false,
+      "logging": {
+        "programOutput": true,
+        "moduleLoad": false,
+        "processExit": false
+      }
+    },
+    {
+      "name": ".NET Core Attach",
+      "type": "coreclr",
+      "request": "attach"
+    }
+  ]
 }
