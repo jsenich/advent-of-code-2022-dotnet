@@ -210,6 +210,22 @@
       }
     },
     {
+      "name": "Day 14",
+      "type": "coreclr",
+      "request": "launch",
+      "preLaunchTask": "build14",
+      "program": "${workspaceFolder}/Day14/bin/Debug/net7.0/Day14.dll",
+      "args": [],
+      "cwd": "${workspaceFolder}/Day14",
+      "console": "internalConsole",
+      "stopAtEntry": false,
+      "logging": {
+        "programOutput": true,
+        "moduleLoad": false,
+        "processExit": false
+      }
+    },
+    {
       "name": "Day 15",
       "type": "coreclr",
       "request": "launch",
