@@ -4,10 +4,11 @@ using MoreLinq.Extensions;
 
 
 namespace Day13;
+
 class Program
 {
 
-    static int CompareLists(object left, object right)
+    public static int CompareLists(object left, object right)
     {
         if (left.GetType() == typeof(JValue) && right.GetType() != typeof(JValue))
         {
@@ -45,8 +46,10 @@ class Program
         return 0;
     }
 
-    static int PartOne(string[] packetPairs)
+    static int PartOne(string puzzleInput)
     {
+        var packetPairs = puzzleInput.Split(new string[] { "\n\n" }, StringSplitOptions.RemoveEmptyEntries & StringSplitOptions.TrimEntries);
+
         int correctIndices = 0;
 
         foreach ((int i, string pair) in Enumerable.Range(0, packetPairs.Length).Select(i => (i, packetPairs[i])))
@@ -64,12 +67,25 @@ class Program
         return correctIndices;
     }
 
+    static int PartTwo(string puzzleInput)
+    {
+        puzzleInput += "\n[[2]]\n[[6]]";
+        var packets = puzzleInput.Split(new string[] { "\n\n", "\n" }, StringSplitOptions.RemoveEmptyEntries & StringSplitOptions.TrimEntries).ToList();
+
+        var dividerPackets = System.Linq.Enumerable.TakeLast(packets, 2).ToList();
+
+        packets.Sort((l, r) => CompareLists(JsonConvert.DeserializeObject(l, typeof(JArray)), JsonConvert.DeserializeObject(r, typeof(JArray))));
+
+        var result = (packets.IndexOf(dividerPackets[0]) + 1) * (packets.IndexOf(dividerPackets[1]) + 1);
+        return result;
+    }
+
     static void Main(string[] args)
     {
 
         var puzzleInput = File.ReadAllText("input.txt");
 
-        // var pairs = """
+        // var puzzleInput = """
         // [1,1,3,1,1]
         // [1,1,5,1,1]
 
@@ -93,12 +109,10 @@ class Program
 
         // [1,[2,[3,[4,[5,6,7]]]],8,9]
         // [1,[2,[3,[4,[5,6,0]]]],8,9]
-        // """.Split(new string[] { "\n\n" }, StringSplitOptions.RemoveEmptyEntries & StringSplitOptions.TrimEntries);
-
-        var pairs = puzzleInput.Split(new string[] { "\n\n" }, StringSplitOptions.RemoveEmptyEntries & StringSplitOptions.TrimEntries);
+        // """;
 
 
-
-        Console.WriteLine($"Part One: {PartOne(pairs)}"); // 5684
+        Console.WriteLine($"Part One: {PartOne(puzzleInput)}"); // 5684
+        Console.WriteLine($"Part One: {PartTwo(puzzleInput)}"); // 22932
     }
 }
