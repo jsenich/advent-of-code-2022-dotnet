@@ -46,8 +46,7 @@ class Program
 
         var sandUnits = 0;
 
-        bool sentinel = true;
-        while (sentinel)
+        while (true)
         {
             var current = start;
             while (true)
@@ -73,12 +72,94 @@ class Program
                 }
                 if (current.y > maxY)
                 {
-                    sentinel = false;
+                    return sandUnits;
+                }
+            }
+
+            sandUnits++;
+        }
+
+        return sandUnits;
+    }
+
+    static int PartTwo(string[] puzzleInput)
+    {
+        var regex = new Regex(@"(?:(?<x>\d+),(?<y>\d+))");
+        (int x, int y) start = (500, 0);
+        var pathPoints = new HashSet<(int x, int y)>();
+
+        foreach (var line in puzzleInput)
+        {
+            List<(int x, int y)> points = regex.Matches(line).Select(m => (int.Parse(m.Groups["x"].Value), int.Parse(m.Groups["y"].Value))).ToList();
+
+            var left = points.First();
+            points.RemoveAt(0);
+
+            foreach (var point in points)
+            {
+                if (point.x == left.x)
+                {
+                    var s = Math.Min(left.y, point.y);
+                    var count = Math.Max(left.y, point.y) - s;
+                    foreach (var y in Enumerable.Range(s, count + 1))
+                    {
+                        pathPoints.Add((point.x, y));
+                    }
+                }
+                else
+                {
+                    var s = Math.Min(left.x, point.x);
+                    var count = Math.Max(left.x, point.x) - s;
+                    foreach (var x in Enumerable.Range(s, count + 1))
+                    {
+                        pathPoints.Add((x, point.y));
+                    }
+                }
+                left = point;
+            }
+
+        }
+
+        var maxY = pathPoints.Select(p => p.y).Max();
+
+        var sandUnits = 0;
+
+        while (true)
+        {
+            var current = start;
+            while (true)
+            {
+                if (pathPoints.Contains(current))
+                {
+                    return sandUnits;
+                }
+                else if (current.y == maxY + 1)
+                {
+                    pathPoints.Add(current);
+                    break;
+                }
+                else if (!pathPoints.Contains((current.x, current.y + 1)))
+                {
+                    current.y++;
+                }
+                else if (!pathPoints.Contains((current.x - 1, current.y + 1)))
+                {
+                    current.x--;
+                    current.y++;
+                }
+                else if (!pathPoints.Contains((current.x + 1, current.y + 1)))
+                {
+                    current.x++;
+                    current.y++;
+                }
+                else
+                {
+                    pathPoints.Add(current);
                     break;
                 }
             }
 
-            if (sentinel) sandUnits++;
+            sandUnits++;
         }
 
         return sandUnits;
@@ -95,5 +176,6 @@ class Program
 
 
         Console.WriteLine($"Part One: {PartOne(puzzleInput)}"); // 625
+        Console.WriteLine($"Part Two: {PartTwo(puzzleInput)}"); // 25193
     }
 }
