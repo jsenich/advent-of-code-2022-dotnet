@@ -194,6 +194,18 @@
       "problemMatcher": "$msCompile"
     },
     {
+      "label": "build20",
+      "command": "dotnet",
+      "type": "process",
+      "args": [
+        "build",
+        "${workspaceFolder}/Day20/Day20.csproj",
+        "/property:GenerateFullPaths=true",
+        "/consoleloggerparameters:NoSummary"
+      ],
+      "problemMatcher": "$msCompile"
+    },
+    {
       "label": "publish",
       "command": "dotnet",
       "type": "process",
